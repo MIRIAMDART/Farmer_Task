@@ -13,7 +13,7 @@ export default class TodoList extends Component {
      
     let itemList = this.state.itemList
     itemList.push(this.state.entryItem)
-    this.setState({itemList})
+    this.setState({itemList, entryItem: ''})
   }
 
   onInputChange = (event) => {
