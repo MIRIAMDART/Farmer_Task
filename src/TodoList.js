@@ -20,24 +20,35 @@ export default class TodoList extends Component {
   onInputChange = (event) => {
     this.setState({entryItem: event.target.value})
   }
-
   
+  deleteItem = key => {
+    const filteredItems = this.state.itemList.filter((item,index)=> {
+      return item.key !== key
+    })
+    this.setState({
+    TodoListItem: filteredItems,
+    })
+  }
+   
+   
 
   render() {
     return (
       <div className= "Top-Wrapper">
         <form className= "todoform" onSubmit= {this.onFormSubmit}>
+        <h3 className="todotitle">Enter Today's Farm Task</h3>
         <input
             type="text"
             className="form-control"
-            placeholder="Enter a task"
+            placeholder="What do you want to achieve on your farm at the end of today?"
             value= {this.state.entryItem}
             onChange = {this.onInputChange}/>
         </form>
-          <h3 className="todotitle">Farm Tasks </h3> 
+         
         {this.state.itemList.map((item, index)=>(
-          <TodoListItem key={index} id={index} todoListItem={item} />
+          <TodoListItem key={index} id={index} todoListItem={item} deleteItem={this.deleteItem} />
         ))}
+
       </div>
     )
   }
