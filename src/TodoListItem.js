@@ -7,9 +7,9 @@ export default class TodoListItem extends Component {
 
     return (
       <div>
-       <p className="prop"> <button className="button" onClick={() =>
-         this.props.deleteItem(TodoListItem.key)} >Task Completed </button>
-         {this.props.id + 1}. {this.props.todoListItem}
+      <p className="prop">  <button className="button" onClick={() =>
+         this.props.deleteItem(this.props.id)} >Delete </button> {" "}
+          { this.props.id + 1}.{this.props.todoListItem}  
        </p>
       </div>
       

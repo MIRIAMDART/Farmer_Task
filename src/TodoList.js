@@ -20,15 +20,16 @@ export default class TodoList extends Component {
   onInputChange = (event) => {
     this.setState({entryItem: event.target.value})
   }
-  
+
   deleteItem = key => {
     const filteredItems = this.state.itemList.filter((item,index)=> {
-      return item.key !== key
+      return index !== key
     })
     this.setState({
-    TodoListItem: filteredItems,
+    items: filteredItems,
     })
   }
+  
    
    
 
@@ -40,7 +41,7 @@ export default class TodoList extends Component {
         <input
             type="text"
             className="form-control"
-            placeholder="What do you want to achieve on your farm at the end of today?"
+            placeholder="What do you want to achieve on your farm today?"
             value= {this.state.entryItem}
             onChange = {this.onInputChange}/>
         </form>
