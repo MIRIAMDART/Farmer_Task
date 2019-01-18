@@ -22,7 +22,7 @@ export default class TodoList extends Component {
   }
 
   deleteItem = key => {
-    const filteredItems = this.state.itemList.filter((item,index)=> {
+    const filteredItems = this.state.itemList.filter((itemList,index)=> {
       return index !== key
     })
     this.setState({
