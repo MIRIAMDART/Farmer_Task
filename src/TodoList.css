@@ -2,7 +2,7 @@
   margin: 20px auto 20px auto;
   width: 600px;
   min-height: 50px;
-  border: 5px solid rgba(255,192,203 ,1 );
+  border: 5px solid orangered;
   padding: 20px;
 
 }
@@ -12,8 +12,8 @@
   margin: 5px auto 5px auto;
   width: 600px;
   min-height: 20px;
-  background: rgba(255,192,203 ,1 );
-  border: 5px solid rgba(255,192,203 ,1 );
+  background: orangered; 
+  border: 5px solid orange ;
   padding: 20px;
 }
 

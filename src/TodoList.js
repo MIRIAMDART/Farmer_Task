@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
 import TodoListItem from './TodoListItem'
-  
+
 
 export default class TodoList extends Component {
   state={
     entryItem: "", 
     itemList: []
-    deleteItem: 
   }
 
 
@@ -22,15 +21,7 @@ export default class TodoList extends Component {
     this.setState({entryItem: event.target.value})
   }
 
-  deleteItem = key => {
-    const filteredItems = this.state.items.filter(item => {
-      return item.key !== key
-    })
-    this.setState({
-      items: filteredItems,
-    })
-  }
-
+  
 
   render() {
     return (
