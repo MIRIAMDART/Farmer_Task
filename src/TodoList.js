@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import TodoListItem from './TodoListItem'
+  
 
 export default class TodoList extends Component {
   state={
     entryItem: "", 
     itemList: []
+    deleteItem: 
   }
 
 
@@ -20,18 +22,28 @@ export default class TodoList extends Component {
     this.setState({entryItem: event.target.value})
   }
 
+  deleteItem = key => {
+    const filteredItems = this.state.items.filter(item => {
+      return item.key !== key
+    })
+    this.setState({
+      items: filteredItems,
+    })
+  }
+
+
   render() {
     return (
-      <div>
-        <form onSubmit= {this.onFormSubmit}>
+      <div className= "Top-Wrapper">
+        <form className= "todoform" onSubmit= {this.onFormSubmit}>
         <input
             type="text"
             className="form-control"
-            placeholder="Enter a Task"
+            placeholder="Enter a task"
             value= {this.state.entryItem}
             onChange = {this.onInputChange}/>
         </form>
-          <h3>Farm Tasks </h3>
+          <h3 className="todotitle">Farm Tasks </h3> 
         {this.state.itemList.map((item, index)=>(
           <TodoListItem key={index} id={index} todoListItem={item} />
         ))}
